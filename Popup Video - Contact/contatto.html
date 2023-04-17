@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+          <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Il tuo messaggio</h1>
+
+    <form action="process-form.php" method="post">
+
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="message">Messaggio</label>
+        <textarea id="message" name="message"></textarea>
+
+  
+        <fieldset>
+            <legend>Tipo di Messaggio</legend>
+
+            <label>
+                <input type="radio" name="type" value="1" checked>
+                Denuncia
+            </label>
+
+            <br>
+
+            <label>
+                <input type="radio" name="type" value="2">
+                Proposta
+            </label>
+
+            <br>
+
+            <label>
+                <input type="radio" name="type" value="2">
+                Notificazione
+            </label>
+
+
+        </fieldset>
+
+        <label>
+            <input type="checkbox" name="terms">
+            Accetto Termini e Condizioni
+        </label>
+
+        <br>
+
+        <button>Inviare</button>
+
+    </form>
+
+    <div class="btn">
+        <div class="play"></div>
+        <p>Riproduci video</p>
+      </div>
+      <div class="clip">
+
+        <iframe width="745" height="415" src="https://www.youtube.com/embed/fXb02MQ78yQ"> </iframe>
+        <b class="close">Pausa Video</b>
+      </div>
+      
+      <script type="text/javascript">
+          let btn = document.querySelector(".btn");
+          let clip = document.querySelector(".clip");
+          let video = document.querySelector("video");
+          let close = document.querySelector(".close");
+          btn.onclick = function(){
+            btn.classList.add("active");
+            clip.classList.add("active");
+            video.currentTime = 0;
+            video.play();
+          }
+          close.onclick = function(){
+            btn.classList.remove("active");
+            clip.classList.remove("active");
+            video.pause(); 
+          }
+      </script>
+</body>
+</html>
